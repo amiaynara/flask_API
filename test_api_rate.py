@@ -9,7 +9,7 @@ except:
 class FlaskTest(unittest.TestCase):
 
     # Check for respose 200
-    api_url = "https://sheltered-lake-41348.herokuapp.com/"
+    api_url = "http://localhost:5000"
 
     def test_index(self):
         response = requests.get(FlaskTest.api_url)
@@ -17,7 +17,7 @@ class FlaskTest(unittest.TestCase):
 
     def test_signup(self):
 
-        url = "https://sheltered-lake-41348.herokuapp.com/"
+        url = "http://localhost:5000/"
 
         payload={'user_name': 'noob',
         'passwd': 'noob'}
@@ -37,8 +37,8 @@ class FlaskTest(unittest.TestCase):
         jwt = jwt.split(":")[-1]    
         print("the jwt is :", jwt)
         '''
-        url =url+ "upload"
-        filereader = open('test_image.png','rb')
+        url = "http://localhost:5000/upload"
+        filereader = open('/home/tesla/Pictures/Wallpapers/bitmap.png','rb')
         payload={}
         files=[
           ('file',('bitmap.png', filereader,'image/png'))
